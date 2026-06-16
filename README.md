@@ -48,6 +48,8 @@ appElements.socialMediaInputsUsingAt.forEach((socialMediaInput) => preserveTextF
 
 ```
 
+ ________
+
 ## Quick Explanation
 
 This line:
