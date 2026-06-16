@@ -39,8 +39,6 @@ const preserveTextFormatInInput = (socialMediaInput, adfix, adfixType = 'prefix'
   textInput.addEventListener('focus', (e) => {if (e.target.value === '') {e.target.value = adfix;}});
   textInput.addEventListener('blur', (e) => {if (e.target.value === adfix) {e.target.value = '';}});
   textInput.addEventListener('keyup', (e) => {if (e.target.value.length <= adfix.length) {e.target.value = adfix;}});
-  textInput.addEventListener('keyup', (e) => {if (e.target.value.length <= adfix.length) {e.target.value = adfix;}});
-
 }
 
 preserveTextFormatInInput(appElements.artistProfileWebsiteInput, 'https://');
@@ -54,9 +52,11 @@ appElements.socialMediaInputsUsingAt.forEach((socialMediaInput) => preserveTextF
 
 This line:
 
-```if (e.target.value.length <= adfix.length) {e.target.value = adfix;}```
+```textInput.addEventListener('keyup', (e) => {if (e.target.value.length <= adfix.length) {e.target.value = adfix;}});```
 
-ensures that any attempt to remove the adfix from the `<input>` will persist the adfix in the `<input>`.
+ensures that any attempt to remove the adfix from the `<input>` via the `[BACKSPACE]` key will not work.
+
+Instead, the adfix will persist in the `<input>`.
 
 
 These lines:
