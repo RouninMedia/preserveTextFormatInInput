@@ -1,12 +1,12 @@
 # preserveTextFormatInInput
-preserveTextFormatInInput() is a short JavaScript function which maintains an obligatory prefix or suffix when the user is interacting with an &lt;input type="text"> HTML form element. 
+`preserveTextFormatInInput()` is a short JavaScript function which maintains an obligatory prefix or suffix when the user is interacting with an &lt;input type="text"> HTML form element. 
 
 ```js
 
 // FORMAT SOCIAL MEDIA ENTRIES ON INPUT
-const preserveSocialMediaFormatInInput = (socialMediaInput, adfix, adfixType = 'prefix') => {
+const preserveTextFormatInInput = (socialMediaInput, adfix, adfixType = 'prefix') => {
 
-  socialMediaInput.addEventListener('selectionchange', (e) => {
+  textInput.addEventListener('selectionchange', (e) => {
     if (e.target.value.length <= adfix.length) {e.target.value = adfix;}
 
     const currentCaretPosition = socialMediaInput.selectionStart;
@@ -28,14 +28,14 @@ const preserveSocialMediaFormatInInput = (socialMediaInput, adfix, adfixType = '
     }
   });
 
-  socialMediaInput.addEventListener('focus', (e) => {if (e.target.value === '') {e.target.value = adfix;}});
-  socialMediaInput.addEventListener('blur', (e) => {if (e.target.value === adfix) {e.target.value = '';}});
+  textInput.addEventListener('focus', (e) => {if (e.target.value === '') {e.target.value = adfix;}});
+  textInput.addEventListener('blur', (e) => {if (e.target.value === adfix) {e.target.value = '';}});
 }
 
-preserveSocialMediaFormatInInput(appElements.artistProfileWebsiteInput, 'https://');
-preserveSocialMediaFormatInInput(appElements.artistProfileFacebookInput, 'https://www.facebook.com/');
-// preserveSocialMediaFormatInInput(appElements.artistProfileTumblrInput, '.tumblr.com', 'suffix');
-appElements.socialMediaInputsUsingAt.forEach((socialMediaInput) => preserveSocialMediaFormatInInput(socialMediaInput, '@'));
+preserveTextFormatInInput(appElements.artistProfileWebsiteInput, 'https://');
+preserveTextFormatInInput(appElements.artistProfileFacebookInput, 'https://www.facebook.com/');
+preserveTextFormatInInput(appElements.artistProfileTumblrInput, '.tumblr.com', 'suffix');
+appElements.socialMediaInputsUsingAt.forEach((socialMediaInput) => preserveTextFormatInInput(socialMediaInput, '@'));
 
 ```
 
