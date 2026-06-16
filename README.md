@@ -17,8 +17,6 @@ This guarantees that the user will always submit:
 const preserveTextFormatInInput = (socialMediaInput, adfix, adfixType = 'prefix') => {
 
   textInput.addEventListener('selectionchange', (e) => {
-    if (e.target.value.length <= adfix.length) {e.target.value = adfix;}
-
     const currentCaretPosition = socialMediaInput.selectionStart;
 
     switch (adfixType) {
@@ -40,6 +38,9 @@ const preserveTextFormatInInput = (socialMediaInput, adfix, adfixType = 'prefix'
 
   textInput.addEventListener('focus', (e) => {if (e.target.value === '') {e.target.value = adfix;}});
   textInput.addEventListener('blur', (e) => {if (e.target.value === adfix) {e.target.value = '';}});
+  textInput.addEventListener('keyup', (e) => {if (e.target.value.length <= adfix.length) {e.target.value = adfix;}});
+  textInput.addEventListener('keyup', (e) => {if (e.target.value.length <= adfix.length) {e.target.value = adfix;}});
+
 }
 
 preserveTextFormatInInput(appElements.artistProfileWebsiteInput, 'https://');
