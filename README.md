@@ -4,7 +4,7 @@
 
 This guarantees that the user will always submit:
 
- - a *URL* prefixed with `https://`; or
+ - a *URL* prefixed with `https://`
  - a *tumblr* handle prefixed with `@`
 
  etc.
