@@ -70,5 +70,3 @@ ensures both that
 1. if the user focuses on an empty form element then the `<input>` will immediately be populated with the adfix
 2. if the user abandons a form element containing only the adfix, then the adfix will be removed, leaving an empty `<input>`
 
-
-'''''''''''''''
