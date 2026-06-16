@@ -1,5 +1,5 @@
 # preserveTextFormatInInput
-`preserveTextFormatInInput()` is a short JavaScript function which persists a required prefix or suffix when the user is adding text to certain HTML form elements including `<input type="text">` and `<input type="url">`.
+`preserveTextFormatInInput()` is a short JavaScript function which automatically persists a required prefix or suffix when the user is adding text to certain HTML form elements including `<input type="text">` and `<input type="url">`.
 
 
 This guarantees that the user will always submit:
