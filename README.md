@@ -59,15 +59,21 @@ ensures that any attempt to remove the adfix from the `<input>` via the `[BACKSP
 Instead, the adfix will persist in the `<input>`.
 
 
+--------
+
+
 This line:
 
 ```textInput.addEventListener('focus', (e) => {if (e.target.value === '') {e.target.value = adfix;}});```
 
 ensures that if the user focuses on an empty form element then the `<input>` will immediately be populated with the adfix.
 
-This line:
-```textInput.addEventListener('blur', (e) => {if (e.target.value === adfix) {e.target.value = '';}});```
+--------
 
+
+This line:
+
+```textInput.addEventListener('blur', (e) => {if (e.target.value === adfix) {e.target.value = '';}});```
 
 ensures that if the user abandons a form element containing only the adfix, then the adfix will be removed, leaving an empty `<input>`.
 
