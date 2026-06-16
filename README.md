@@ -1,7 +1,7 @@
 # preserveTextFormatInInput
 preserveTextFormatInInput() is a short JavaScript function which maintains an obligatory prefix or suffix when the user is interacting with an &lt;input type="text"> HTML form element. 
 
-'''js
+```js
 
 // FORMAT SOCIAL MEDIA ENTRIES ON INPUT
 const preserveSocialMediaFormatInInput = (socialMediaInput, adfix, adfixType = 'prefix') => {
@@ -37,6 +37,7 @@ preserveSocialMediaFormatInInput(appElements.artistProfileFacebookInput, 'https:
 // preserveSocialMediaFormatInInput(appElements.artistProfileTumblrInput, '.tumblr.com', 'suffix');
 appElements.socialMediaInputsUsingAt.forEach((socialMediaInput) => preserveSocialMediaFormatInInput(socialMediaInput, '@'));
 
+```
 
 
 
