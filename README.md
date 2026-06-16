@@ -1,5 +1,5 @@
 # preserveTextFormatInInput
-`preserveTextFormatInInput()` is a short JavaScript function which maintains an obligatory prefix or suffix when the user is interacting with an `<input type="text">` HTML form element.
+`preserveTextFormatInInput()` is a short JavaScript function which maintains an obligatory prefix or suffix when the user is interacting with HTML form elements including `<input type="text">` and `<input type="url">`.
 
 
 This guarantees that the user will always submit:
@@ -49,6 +49,26 @@ appElements.socialMediaInputsUsingAt.forEach((socialMediaInput) => preserveTextF
 
 ```
 
+## Quick Explanation
+
+This line:
+
+```if (e.target.value.length <= adfix.length) {e.target.value = adfix;}```
+
+ensures that any attempt to remove the adfix from the `<input>` will persist the adfix in the `<input>`.
+
+
+These lines:
+
+```
+textInput.addEventListener('focus', (e) => {if (e.target.value === '') {e.target.value = adfix;}});
+textInput.addEventListener('blur', (e) => {if (e.target.value === adfix) {e.target.value = '';}});
+```
+
+ensures both that
+
+1. if the user focuses on an empty form element then the `<input>` will immediately be populated with the adfix
+2. if the user abandons a form element containing only the adfix, then the adfix will be removed, leaving an empty `<input>`
 
 
 '''''''''''''''
